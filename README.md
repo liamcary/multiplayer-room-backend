@@ -17,6 +17,7 @@ This was written as a quick one-day prototype to explore a system for publishing
 - Google Cloud SDK & CLI (https://cloud.google.com/sdk/docs/install)
 - Protobuf (https://github.com/protocolbuffers/protobuf/releases/latest)
 - Go support for protocol buffers (https://github.com/protocolbuffers/protobuf-go/releases)
+- Google firebase tools (Run 'npm -g install firebase-tools', then 'firebase login')
 
 ### Setup
 Since this backend is created with Google Cloud Functions and Google Firestore, you'll need to setup a project on Google Cloud Platform. This will require a credit card number for proof of identification, but they give you free trial credits for individuals just prototyping.
