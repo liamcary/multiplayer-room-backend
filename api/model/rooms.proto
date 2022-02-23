@@ -1,0 +1,54 @@
+syntax = "proto3";
+package multiplayer.model;
+option go_package = "api/model";
+
+import "google/protobuf/timestamp.proto";
+import "api/firestore/document.proto";
+import "api/model/users.proto";
+
+message Room {
+    string id = 1;
+    string name = 2;
+    google.protobuf.Timestamp timeCreated = 3;
+    firestore.DocumentRef host = 4;
+    repeated firestore.DocumentRef clients = 5;
+    string location = 6;
+}
+
+message RoomInfo {
+    string id = 1;
+    string name = 2;
+    int32 users = 3;
+    string location = 4;
+}
+
+message RoomGetAllResponse {
+    repeated RoomInfo rooms = 1;
+}
+
+message RoomCreateRequest {
+    string name = 1;
+    UserRequest user = 2;
+}
+
+message RoomCreateResponse {
+    string roomId = 1;
+    string hostId = 2;
+}
+
+message RoomJoinRequest {
+    string id = 1;
+    UserRequest user = 2;
+}
+
+message RoomJoinResponse{
+    string clientId = 1;
+}
+
+message RoomLeaveRequest {
+    string roomId = 1;
+    string userId = 2;
+}
+
+message RoomLeaveResponse{
+}

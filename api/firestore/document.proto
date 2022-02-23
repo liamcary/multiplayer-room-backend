@@ -1,0 +1,9 @@
+syntax = "proto3";
+package multiplayer.firestore;
+option go_package = "cloud.google.com/go/firestore";
+
+// Dummy package to use Firestore types
+
+message DocumentRef {
+	string unique_name_for_document_ref = 1;
+}
