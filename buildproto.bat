@@ -1,0 +1,1 @@
+protoc --go_out=go api\model\rooms.proto api\model\users.proto api\firestore\document.proto
